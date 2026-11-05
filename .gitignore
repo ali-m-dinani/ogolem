@@ -1,5 +1,10 @@
 build
 .gradle
+.tools/
+.venv/
+__pycache__/
+/converted/
+.idea/
 manual/manual.aux
 manual/manual.bbl
 manual/manual.blg

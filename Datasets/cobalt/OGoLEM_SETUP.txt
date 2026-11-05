@@ -1,0 +1,19 @@
+Copied from C:\Users\alimo\PycharmProjects\JAX-ReaxFF\Datasets\cobalt.
+All six original files were copied without modification and SHA256 verified.
+The additional file named ffield is an exact copy of ffield_lit, used as the
+starting force field by the converter. No training targets were removed.
+
+Prepared run: C:\Users\alimo\PycharmProjects\ogolem\converted\cobalt_jax
+Engine: JAX-MD through the existing JAX-ReaxFF Python environment.
+Geometry minimization: 200 steps, learning rate 0.001, RMSG threshold 1.0,
+cutoff2 0.001, bonded cutoff 5.0 Angstrom.
+Global optimizer: S4-inspired OGolem GA, population 10, 100 iterations.
+The literature force field is one seed; remaining initial candidates are random.
+GA iterations are not equivalent to JAX-ReaxFF optimizer steps.
+Results of the two optimization algorithms need not agree even when the
+dataset, starting force field and geometry-evaluation settings are the same.
+
+The dataset and configuration have been validated, but a full cobalt evaluation
+or optimization has not been launched during setup. Evaluate initial.params
+first before beginning optimization. Successful evaluations are archived in
+the run folder's evaluations directory.

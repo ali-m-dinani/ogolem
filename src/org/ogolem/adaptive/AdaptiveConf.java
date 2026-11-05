@@ -177,6 +177,21 @@ public class AdaptiveConf implements Configuration<Double, AdaptiveParameters> {
           System.err.println(
               "Wrong input for the parameter population size. Using default. " + e.toString());
         }
+      } else if (lineAdapConf.startsWith("CrossProbability=")) {
+        crossPossibility = Double.parseDouble(lineAdapConf.substring("CrossProbability=".length()));
+        if (!Double.isFinite(crossPossibility)
+            || crossPossibility < 0.0
+            || crossPossibility > 1.0) {
+          throw new IllegalArgumentException("CrossProbability must be in [0, 1]");
+        }
+      } else if (lineAdapConf.startsWith("MutationRatio=")) {
+        mutationRatio = Double.parseDouble(lineAdapConf.substring("MutationRatio=".length()));
+        if (!Double.isFinite(mutationRatio) || mutationRatio < 0.0 || mutationRatio > 1.0) {
+          throw new IllegalArgumentException("MutationRatio must be in [0, 1]");
+        }
+      } else if (lineAdapConf.startsWith("ParentsChoice=")) {
+        whichParentsChoice = lineAdapConf.substring("ParentsChoice=".length()).trim();
+        GenericParentSelectors.buildSelector(whichParentsChoice);
       } else if (lineAdapConf.startsWith("ParameterDetailedStats=")) {
         try {
           enableDetailedStats = Boolean.parseBoolean(lineAdapConf.substring(23));
